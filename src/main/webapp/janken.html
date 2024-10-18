@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>じゃんけん</title>
+</head>
+<body>
+	<form action="JankenServlet" method="post">
+		<table>
+			<tr align="center">
+				<td><img src="img/グー.png" height="250" width="250"></td>
+				<td><img src="img/チョキ.png" height="250" width="250"></td>
+				<td><img src="img/パー.png" height="250" width="250"></td>
+			</tr>
+			<tr align="center">
+				<td><input type="radio" name="janken" value="0" checked> グー！</td>
+				<td><input type="radio" name="janken" value="1"> チョキ！</td>
+				<td><input type="radio" name="janken" value="2"> パー！</td>
+			</tr>
+			<tr align="center">
+				<td colspan="3"><input type="submit" value="勝負！"></td>
+			</tr>
+		</table>
+		<br>
+	</form>
+</body>
+</html>
