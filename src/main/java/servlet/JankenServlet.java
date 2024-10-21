@@ -33,7 +33,7 @@ public class JankenServlet extends HttpServlet {
 		int lossesNum = 0;
 		//ランダムな手を出すじゃんけん相手の生成
 		Random random = new Random();
-		int rnum = random.nextInt(2);
+		int rnum = random.nextInt(3);
 		//前回までのデータを取得
 		HttpSession session = request.getSession();
 		JankenData janken1 = (JankenData)session.getAttribute("janken");
@@ -47,9 +47,9 @@ public class JankenServlet extends HttpServlet {
 		janken1.setResult(result);
 		janken1.setPlayerChoice(jnum);
 		janken1.setEnemyChoice(rnum);
-		if(result == janken1.JADGE_WIN) {
+		if(result == JankenData.JADGE_WIN) {
 			janken1.setWinsNum(janken1.getWinsNum()+1);
-		}else if(result == janken1.JADGE_LOSE) {
+		}else if(result == JankenData.JADGE_LOSE) {
 			janken1.setLossesNum(janken1.getLossesNum()+1);
 		}
 		
