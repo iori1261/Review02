@@ -36,21 +36,21 @@ public class JankenServlet extends HttpServlet {
 		int rnum = random.nextInt(2);
 		//前回までのデータを取得
 		HttpSession session = request.getSession();
-		JankenData janken = (JankenData)session.getAttribute("janken");
+		JankenData janken1 = (JankenData)session.getAttribute("janken");
 		//JankenDataが取得できなかったら新規作成
-		if(janken == null) {
-			janken = new JankenData();
-			janken.setWinsNum(0);
-			janken.setLossesNum(0);
+		if(janken1 == null) {
+			janken1 = new JankenData();
+			janken1.setWinsNum(0);
+			janken1.setLossesNum(0);
 		}
 		//今回のじゃんけんの結果を記録
-		janken.setResult(result);
-		janken.setPlayerChoice(jnum);
-		janken.setEnemyChoice(rnum);
-		if(result == janken.JADGE_WIN) {
-			janken.setWinsNum(janken.getWinsNum()+1);
-		}else if(result == janken.JADGE_LOSE) {
-			janken.setLossesNum(janken.getLossesNum()+1);
+		janken1.setResult(result);
+		janken1.setPlayerChoice(jnum);
+		janken1.setEnemyChoice(rnum);
+		if(result == janken1.JADGE_WIN) {
+			janken1.setWinsNum(janken1.getWinsNum()+1);
+		}else if(result == janken1.JADGE_LOSE) {
+			janken1.setLossesNum(janken1.getLossesNum()+1);
 		}
 		
 		session.setAttribute("janken", session);
